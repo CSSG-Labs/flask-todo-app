@@ -34,7 +34,7 @@ The purpose of this project is to
 
 ### Prequisites
 
-- _under construction..._
+- pip install -r requirements.txt
 
 ### How to run
 
