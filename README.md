@@ -19,10 +19,9 @@ The purpose of this project is to
 - Learn how to build APIs using flask
 - Gain experience in web development
 
-### Features
+### Features (V1)
 
 - Create & delete todo items
-
 
 ### Built with
 
