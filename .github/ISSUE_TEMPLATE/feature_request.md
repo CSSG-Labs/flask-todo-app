@@ -1,20 +1,22 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest an enhancement or feature
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**What**
+_What is your enhancement? What does it do..._
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Why**
+_Explain why your enhancement is necessary or needed. Whats the reason for it?..._ 
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**How**
+_Short descriptor on how it will be implemented if possible..._
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Requirements**
+_Any requirements your enchancement should satisfy? This can help the PR reviewer know what to check for when reviewing your code_
+
+_NOTE: Please apply the appropriate labels and project to the issue!_
