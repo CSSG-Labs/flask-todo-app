@@ -38,9 +38,11 @@ _Instructions are written with Windows vscode users in mind..._
   - Type and select `Python: Select Interpreter` option
   - Select `python.exe` file inside the `venv` folder
   - Close terminal and relaunch
-  - Verify `venv` is activated by seeing `(.venv)` prompt in terminal 
+  - Verify `venv` is activated by seeing `(.venv)` prompt in terminal
 - Install project dependencies
   - `pip install -r requirements.txt`
+- Setup pre-commit hook
+  - `pre-commit install`
 
 ### Running app
 
