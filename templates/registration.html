@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <form action="action_page.php"></form>
+        <div class="container">
+
+            <h1>Registration</h1>
+
+            <p>Please create an account if you do not already have one.</p>
+
+            <hr>
+
+            <div class="signup-container">
+
+                <label for="email">E-mail</label>
+                <input type="text" placeholder="please enter your e-mail address..." name="email" id="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" placeholder="please enter your password..." name="password" id="password" required>
+
+                <label for="psw-repeat">Repeat your password</label>
+                <input type="password" placeholder="please repeat your password..." name="psw-repeat" id="psw-repeat" required>
+            
+            </div>
+
+            <button type="submit" id="register-button">Register</button>
+
+            <hr>
+
+        </div>
+
+        <div class="sign-in">
+
+            <label for="signin" id="signin-label">I already have an account<label>
+            <button id="signin" name="signin">Sign-in</button>
+
+        </div>
+    </form>
+
+</html>
+
+
+
