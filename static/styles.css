@@ -1,0 +1,70 @@
+body {
+    position: absolute;
+    border: 1px solid black;
+  }
+  
+  /* Add a black background color to the top navigation */
+  .topnav {
+      background-color: #ffffff;
+      overflow: hidden;
+      border-bottom: 1px solid black;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 10px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #04AA6D;
+    color: black;
+  }
+  
+  /* Add a color to the app name */
+  .topnav a.active {
+    color: black;
+    font-weight: bold;
+    padding: 14px 16px;
+  }
+  
+  .topnav a.active:hover {
+    background-color: white;
+  }
+  
+  /* Right-aligned section inside the top navigation */
+  .topnav-right {
+    float: right;
+  }
+  
+  /* Purpose box */
+  .purpose {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #76ca97;
+    padding: 25px;
+    margin: 20px 15px;
+  }
+  
+  /* Members box */
+  .members {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #eddf83;
+    padding: 25px;
+    margin: 20px 15px;
+  }
+  
+  /* Community box */
+  .community {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #ee8a84;
+    padding: 25px;
+    margin: 20px 15px;
+  }
