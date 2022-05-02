@@ -11,6 +11,17 @@
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
+
+        <div class="topnav">
+            <a class="active">Todos</a>
+            <div class="topnav-right">
+            <a href="#about">About</a>
+            <a href="#register">Register</a>
+            <a href="#Login">Login</a>
+            </div>
+        </div> 
+
         {% block body %}{% endblock %}
+        
     </body>
 </html>
