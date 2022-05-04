@@ -47,9 +47,9 @@ _Instructions are written with Windows vscode users in mind..._
 ### Running app
 
 - Set `FLASK_APP` env variable
-  - `set FLASK_APP=run.py`
+  - `$env:FLASK_APP="main"`
 - Set `FLASK_ENV` env variable
-  - `set FLASK_ENV=development`
+  - `$env:FLASK_ENV="development"`
 - Run app
   - `flask run`
 
