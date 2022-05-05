@@ -2,7 +2,9 @@
 
 import os
 
+
 from flask import Flask, render_template
+from .data import db
 
 # --> see 2*
 def create_app(test_config=None):
@@ -15,6 +17,8 @@ def create_app(test_config=None):
         # app.instance.path - path to instance folder
         DATABASE=os.path.join(app.instance_path, 'main.sqlite'),
     )
+
+    db.init_app(app)
 
     if test_config is None:
         # If config.py exists, then it overrides app.config.from_mapping with config.py
@@ -60,3 +64,4 @@ def create_app(test_config=None):
 #   of the application root
 #   - instance folder is for deployment specific things that should...
 #      not be version controlled, such as .env files; it is located outside the app package
+#      - in this app, the database sqlite file will be located in the instance directory
