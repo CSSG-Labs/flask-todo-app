@@ -50,6 +50,8 @@ _Instructions are written with Windows vscode users in mind..._
   - `$env:FLASK_APP="main"`
 - Set `FLASK_ENV` env variable
   - `$env:FLASK_ENV="development"`
+- Initialize database
+  - `flask init-db`
 - Run app
   - `flask run`
 
