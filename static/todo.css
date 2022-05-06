@@ -1,0 +1,38 @@
+.todo {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo__add {
+    width: 100%;
+}
+
+.todo__add form{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.todo__add button, input {
+    padding: 0.5em 1em;
+    /* border: 1px solid transparent; */
+    font-size: 1.2em;
+    -webkit-appearance: none;
+    border-radius: 5px;
+}
+
+.todo__add button {
+    background-color: var(--todo-green);
+    margin-left: 5px;
+    border: 1px solid transparent;
+    color: white;
+}
+
+.todo__add input {
+    margin-right: 0;
+    width: 50%;
+}
