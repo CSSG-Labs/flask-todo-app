@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  /* primary colors */
+  --todo-green: rgba(6, 174, 73, 1);
+  --todo-red: rgba(255, 43, 35, 1);
+  --todo-yellow: rgba(255, 213, 29, 1);
+  --todo-yellow-green: rgba(183, 208, 25, 1);
+
+  /* light colors */
+  --todo-light-green: rgba(6, 174, 73, 0.5);
+  --todo-light-red: rgba(255, 43, 35, 0.5);
+  --todo-light-yellow: rgba(255, 213, 29, 0.5);
+  --todo-light-yellow-green: rgba(183, 208, 25, 0.5);
+}
+
 /* Source for this CSS reset: https://www.joshwcomeau.com/css/custom-css-reset */
 
 /*
