@@ -2,24 +2,25 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .todo__add {
+    margin: 2em 0;
     width: 100%;
 }
 
 .todo__add form{
-    margin-top: 50px;
+    /* display:block */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-
+    width: 50%;
+    margin: 0 auto;
 }
 
 .todo__add button, input {
     padding: 0.5em 1em;
-    /* border: 1px solid transparent; */
     font-size: 1.2em;
     -webkit-appearance: none;
     border-radius: 5px;
@@ -34,5 +35,72 @@
 
 .todo__add input {
     margin-right: 0;
+    font: 'Roboto Condensed';
+    font-style: italic;
+    width: 100%;
+}
+
+.todo__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.todo__items__item {
+    padding: 1em;
     width: 50%;
+    border-radius: 5px;
+    font: 'Roboto Condensed';
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* TODO: Implement this using jquery or jinja */
+.todo__items__item:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.todo__items__item:first-child {
+    background-color: var(--todo-light-green);
+}
+
+.todo__items__item:nth-child(5n) {
+    background-color: var(--todo-light-green);
+}
+
+.todo__items__item:nth-child(4n) {
+    background-color: var(--todo-light-yellow-green);
+}
+
+.todo__items__item:nth-child(3n) {
+    background-color: var(--todo-light-red);
+}
+
+.todo__items__item:nth-child(2n) {
+    background-color: var(--todo-light-yellow);
+}
+
+.todo__clear {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-top: 1.5em;
+}
+
+.todo__clear button {
+    background-color: var(--todo-red);
+    border-radius: 5px;
+    color: white;
+    padding: 0.5em;
+    border: 0;
+    font-size: 1.2em;
+}
+
+.todo__clear span {
+    padding: 0 0.3em;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-left: 0.3em;
 }
