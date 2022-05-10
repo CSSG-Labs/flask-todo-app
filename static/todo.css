@@ -1,45 +1,67 @@
-.todo {
+:root {
+    /* rounded corners for box-like elements */
+    --radius: 5px;
+}
+
+.todo-container {
     display:flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    /* Take up entire width of screen */
+    width: 100%; 
 }
 
+/* Input form for adding todos */
 .todo__add {
     margin: 2em 0;
+    /* Need to explicitly set width to adjust width for input form */
     width: 100%;
 }
 
-.todo__add form{
-    /* display:block */
+.todo__add__form{
+    /* Allow input field and button sit side by side */
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 50%;
+    /* `auto` allows input form to be centered in page */
     margin: 0 auto;
 }
 
-.todo__add button, input {
+.todo__add__form button, 
+.todo__add__form input {
     padding: 0.5em 1em;
     font-size: 1.2em;
-    -webkit-appearance: none;
-    border-radius: 5px;
 }
 
-.todo__add button {
+.todo__add__form button {
     background-color: var(--todo-green);
-    margin-left: 5px;
     border: 1px solid transparent;
     color: white;
+    /* sets radius for top and bottom right corners */
+    border-radius: 0 var(--radius) var(--radius) 0;
+    border-left: 0;
 }
 
-.todo__add input {
-    margin-right: 0;
+.todo__add__form input {
     font: 'Roboto Condensed';
     font-style: italic;
+    /* take up 100% of available space */
     width: 100%;
+    border: 1px solid gray;
 }
 
+.todo__add__form input, 
+.todo__add__form input:focus {
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.todo__add__form input:focus {
+    border: 4px solid var(--todo-green);
+    font-style: normal;
+    /* remove default outline when input is selected */
+    outline: none;
+}
+
+/* Displaying, editing, and deleting todos */
 .todo__items {
     display: flex;
     flex-direction: column;
@@ -48,15 +70,23 @@
 }
 
 .todo__items__item {
+    /* 
+      - Need to set position here for the SVG buttons
+      - Because the SVG buttons use position:absolute
+      - Which requires the parent to have a non-default position
+      - Otherwise, they would be positioned to the HTML body
+      - https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/#aa-absolute
+    */
+    position: relative;
     padding: 1em;
     width: 50%;
-    border-radius: 5px;
+    border-radius: var(--radius);
     font: 'Roboto Condensed';
     font-style: italic;
     font-size: 1.2em;
 }
 
-/* TODO: Implement this using jquery or jinja */
+/* TODO: Implement color repetition pattern properly*/
 .todo__items__item:not(:last-child) {
     margin-bottom: 1em;
 }
@@ -81,16 +111,20 @@
     background-color: var(--todo-light-yellow);
 }
 
+/* Todos clear all button */
+
 .todo__clear {
     display: flex;
+    /* makes it so element is positioned on the right edge */
     justify-content: flex-end;
+    /* Needed to for button to be aligned with the above HTML elements */
     width: 50%;
     margin-top: 1.5em;
 }
 
 .todo__clear button {
     background-color: var(--todo-red);
-    border-radius: 5px;
+    border-radius: var(--radius);
     color: white;
     padding: 0.5em;
     border: 0;
@@ -101,6 +135,6 @@
     padding: 0 0.3em;
     background-color: white;
     color: black;
-    border-radius: 5px;
+    border-radius: var(--radius);
     margin-left: 0.3em;
 }
