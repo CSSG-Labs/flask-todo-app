@@ -1,6 +1,8 @@
 :root {
     /* rounded corners for box-like elements */
     --radius: 5px;
+    --desktop-width: 50%;
+    --mobile-width: 80%;
 }
 
 .todo-container {
@@ -21,7 +23,7 @@
 .todo__add__form{
     /* Allow input field and button sit side by side */
     display: flex;
-    width: 50%;
+    width: var(--desktop-width);
     /* `auto` allows input form to be centered in page */
     margin: 0 auto;
 }
@@ -61,7 +63,9 @@
     outline: none;
 }
 
-/* Displaying, editing, and deleting todos */
+/* 
+    Displaying, editing, and deleting todos 
+*/
 .todo__items {
     display: flex;
     flex-direction: column;
@@ -79,11 +83,44 @@
     */
     position: relative;
     padding: 1em;
-    width: 50%;
+    width: var(--desktop-width);
     border-radius: var(--radius);
     font: 'Roboto Condensed';
     font-style: italic;
     font-size: 1.2em;
+    z-index: 1;
+}
+
+.todo__items__item__action {
+    /* set edit and delete button positions relative to its container */
+    position: absolute;
+    /* center items vertically according to the middle of the elements rather than the top edge */
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.todo__items__item__action__container{
+    /* set buttons to sit side by side */
+    display: flex;
+}
+
+.todo__items__item__action__container button {
+    background: none;
+    border: none;
+    padding: 0 0.5em;
+}
+
+.todo__items__item__action__container button:hover {
+    /* increase size of button when mouse hovers over */
+    transform: scale(1.2);
+}
+
+.todo__items__item__edit, 
+.todo__items__item__delete {
+    /* Centers the SVGs */
+    /* Note: not sure why... */
+    display: flex;
 }
 
 /* TODO: Implement color repetition pattern properly*/
@@ -111,14 +148,16 @@
     background-color: var(--todo-light-yellow);
 }
 
-/* Todos clear all button */
+/* 
+    Todos clear all button 
+*/
 
 .todo__clear {
     display: flex;
     /* makes it so element is positioned on the right edge */
     justify-content: flex-end;
     /* Needed to for button to be aligned with the above HTML elements */
-    width: 50%;
+    width: var(--desktop-width);
     margin-top: 1.5em;
 }
 
@@ -137,4 +176,39 @@
     color: black;
     border-radius: var(--radius);
     margin-left: 0.3em;
+}
+
+@media screen and (max-width: 600px){
+    .todo__add__form {
+        width: var(--mobile-width);
+    }
+
+    .todo__items__item {
+        width: var(--mobile-width);
+        padding: 0.5em;
+    }
+
+    .todo__items__item:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .todo__clear {
+        width: var(--mobile-width);
+    }
+}
+
+/* 
+    utility classes 
+*/
+
+.hide {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.blur-background {
+    background: var(--todo-red) !important;
 }
