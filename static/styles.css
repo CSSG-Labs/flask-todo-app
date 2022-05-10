@@ -10,8 +10,8 @@
 
   /* light colors */
   --todo-light-green: rgba(6, 174, 73, 0.5);
-  --todo-light-red: rgba(255, 43, 35, 0.5);
-  --todo-light-yellow: rgba(255, 213, 29, 0.5);
+  --todo-light-red: rgba(255, 43, 35, 0.35);
+  --todo-light-yellow: rgba(255, 213, 29, 0.65);
   --todo-light-yellow-green: rgba(183, 208, 25, 0.5);
 }
 
