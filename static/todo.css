@@ -13,7 +13,9 @@
     width: 100%; 
 }
 
-/* Input form for adding todos */
+/* 
+    Input form for adding todos 
+*/
 .todo__add {
     margin: 2em 0;
     /* Need to explicitly set width to adjust width for input form */
@@ -66,14 +68,14 @@
 /* 
     Displaying, editing, and deleting todos 
 */
-.todo__items {
+.todo__group {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.todo__items__item {
+.todo__group__item {
     /* 
       - Need to set position here for the SVG buttons
       - Because the SVG buttons use position:absolute
@@ -88,63 +90,59 @@
     font: 'Roboto Condensed';
     font-style: italic;
     font-size: 1.2em;
-    z-index: 1;
 }
 
-.todo__items__item__action {
+.todo__group__item__action {
     /* set edit and delete button positions relative to its container */
     position: absolute;
     /* center items vertically according to the middle of the elements rather than the top edge */
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-}
-
-.todo__items__item__action__container{
     /* set buttons to sit side by side */
     display: flex;
 }
 
-.todo__items__item__action__container button {
+.todo__group__item__action button {
     background: none;
     border: none;
     padding: 0 0.5em;
 }
 
-.todo__items__item__action__container button:hover {
+.todo__group__item__action button:hover {
     /* increase size of button when mouse hovers over */
     transform: scale(1.2);
 }
 
-.todo__items__item__edit, 
-.todo__items__item__delete {
+.todo__group__item__action__edit, 
+.todo__group__item__action__delete {
     /* Centers the SVGs */
     /* Note: not sure why... */
     display: flex;
 }
 
 /* TODO: Implement color repetition pattern properly*/
-.todo__items__item:not(:last-child) {
+.todo__group__item:not(:last-child) {
     margin-bottom: 1em;
 }
 
-.todo__items__item:first-child {
+.todo__group__item:first-child {
     background-color: var(--todo-light-green);
 }
 
-.todo__items__item:nth-child(5n) {
+.todo__group__item:nth-child(5n) {
     background-color: var(--todo-light-green);
 }
 
-.todo__items__item:nth-child(4n) {
+.todo__group__item:nth-child(4n) {
     background-color: var(--todo-light-yellow-green);
 }
 
-.todo__items__item:nth-child(3n) {
+.todo__group__item:nth-child(3n) {
     background-color: var(--todo-light-red);
 }
 
-.todo__items__item:nth-child(2n) {
+.todo__group__item:nth-child(2n) {
     background-color: var(--todo-light-yellow);
 }
 
@@ -158,7 +156,7 @@
     justify-content: flex-end;
     /* Needed to for button to be aligned with the above HTML elements */
     width: var(--desktop-width);
-    margin-top: 1.5em;
+    margin: 1.5em 0;
 }
 
 .todo__clear button {
@@ -183,12 +181,11 @@
         width: var(--mobile-width);
     }
 
-    .todo__items__item {
+    .todo__group__item {
         width: var(--mobile-width);
-        padding: 0.5em;
     }
 
-    .todo__items__item:not(:last-child) {
+    .todo__group__item:not(:last-child) {
         margin-bottom: 0;
     }
 
