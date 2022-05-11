@@ -1,5 +1,6 @@
 # source: https://www.vantage-ai.com/blog/speed-up-your-python-development-workflow-with-pre-commit-and-makefile
-exclude: (^.md | ^.html | ^.css | ^.js | ^.txt)
+# Note: exclude uses python regex
+exclude: '^.*\.(md|html|css|js|txt)$'
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0

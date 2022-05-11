@@ -1,7 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Roboto+Condensed:ital,wght@1,300&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  /* primary colors */
+  --todo-green: rgba(6, 174, 73, 1);
+  --todo-red: rgba(255, 43, 35, 1);
+  --todo-yellow: rgba(255, 213, 29, 1);
+  --todo-yellow-green: rgba(183, 208, 25, 1);
+
+  /* light colors */
+  --todo-light-green: rgba(6, 174, 73, 0.5);
+  --todo-light-red: rgba(255, 43, 35, 0.35);
+  --todo-light-yellow: rgba(255, 213, 29, 0.65);
+  --todo-light-yellow-green: rgba(183, 208, 25, 0.5);
+}
+
+/* Source for this CSS reset: https://www.joshwcomeau.com/css/custom-css-reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
 body {
-    position: absolute;
-    border: 1px solid black;
-  }
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+  display:flex;
+  flex-direction: column;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
 
   /* Add a black background color to the top navigation */
   .topnav {
