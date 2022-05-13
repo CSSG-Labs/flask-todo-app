@@ -5,4 +5,4 @@ todo_router = Blueprint('todo', __name__, template_folder='templates',  static_f
 
 @todo_router.route("/")
 def home():
-    return render_template("todo.html")
+    return render_template("index.html")
