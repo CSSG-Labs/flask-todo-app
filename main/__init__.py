@@ -6,7 +6,7 @@ from flask import Flask, render_template
 from .data import db
 
 from . import views
-from .modules.todo.views import todo_router
+from .blueprints.todo.views import todo_router
 
 # --> see 2*
 def create_app(test_config=None):
