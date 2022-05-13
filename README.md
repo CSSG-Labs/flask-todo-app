@@ -46,4 +46,4 @@ The purpose of this project is to
 
 ## Join the discussions!
 
-- Contact ironbe#4809 on discord (add me as friend if we don't share a server)
+- Contact ironbe#4809 on discord
