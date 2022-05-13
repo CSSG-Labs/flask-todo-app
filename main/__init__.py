@@ -2,9 +2,11 @@
 
 import os
 
-
 from flask import Flask, render_template
 from .data import db
+
+from . import views
+from .modules.todo.views import todo_router
 
 # --> see 2*
 def create_app(test_config=None):
@@ -34,13 +36,8 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route("/")
-    def index():
-        return render_template('todo.html')
-
-    @app.route("/about")
-    def about():
-        return render_template('about.html')
+    app.register_blueprint(views.app_router)
+    app.register_blueprint(todo_router, url_prefix='/todos')
 
     return app
 
