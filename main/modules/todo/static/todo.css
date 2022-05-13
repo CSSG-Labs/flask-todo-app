@@ -126,24 +126,20 @@
     margin-bottom: 1em;
 }
 
-.todo__group__item:first-child {
+.todo__group__item:nth-child(4n-3) {
     background-color: var(--todo-light-green);
 }
 
-.todo__group__item:nth-child(5n) {
-    background-color: var(--todo-light-green);
+.todo__group__item:nth-child(4n-2) {
+    background-color: var(--todo-light-red);
+}
+
+.todo__group__item:nth-child(4n-1) {
+    background-color: var(--todo-light-yellow);
 }
 
 .todo__group__item:nth-child(4n) {
     background-color: var(--todo-light-yellow-green);
-}
-
-.todo__group__item:nth-child(3n) {
-    background-color: var(--todo-light-red);
-}
-
-.todo__group__item:nth-child(2n) {
-    background-color: var(--todo-light-yellow);
 }
 
 /* 
