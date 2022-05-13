@@ -33,13 +33,17 @@ The purpose of this project is to
 
 ### Prequisites
 
-- pip install -r requirements.txt
+- Python3
 
 ### How to run
 
-- _under construction..._
+- See [CONTRIBUTING page](https://github.com/CSSG-Labs/flask-todo-app/blob/main/docs/CONTRIBUTING.md)
 
-## Roadmap
+## Roadmap (V1)
 
-- _under construction..._
+![image](https://user-images.githubusercontent.com/14286113/168209733-13b07706-3ba2-43af-8935-72cad91b054a.png)
 
+
+## Join the discussions!
+
+- Contact ironbe#4809 on discord (add me as friend if we don't share a server)
