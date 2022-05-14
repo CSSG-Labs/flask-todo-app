@@ -12,6 +12,7 @@ from .blueprints.todo.views import todo_router
 def create_app(test_config=None):
     # __name__ & instance_relative_config --> see 3*
     app = Flask(__name__, instance_relative_config=True)
+
     # sets default configuration for flask app (development?)
     app.config.from_mapping(
         # TODO: load from enviroment variable
@@ -19,6 +20,8 @@ def create_app(test_config=None):
         # app.instance.path - path to instance folder
         DATABASE=os.path.join(app.instance_path, 'main.sqlite'),
     )
+
+    app.config['db'] = db.get_db()
 
     db.init_app(app)
 

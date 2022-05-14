@@ -75,6 +75,11 @@
     width: 100%;
 }
 
+.todo__group__no-items {
+    font-family: 'Roboto Condensed';
+    font-style: italic;
+}
+
 .todo__group__item {
     /* 
       - Need to set position here for the SVG buttons

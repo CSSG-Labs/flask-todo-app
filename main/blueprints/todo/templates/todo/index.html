@@ -17,27 +17,39 @@
                 <button type="submit">ADD</button>
             </form>
         </div>
-        <div class="todo__group">
-            <div class="todo__group__item" onclick="onClickTodoItem(this);">
-                {% block todo_item %}
-                {% endblock %}
+        {% if todos %}
+            <div class="todo__group">
+                {% for todo in todos %}
+                    <p class="todo__group__item__desc">{{ todo['desc'] }}</p>
+                    <div class="todo__group__item__action hide">
+                        <form action="" class="todo__group__item__action__edit">
+                            <input type="hidden" name="todo-item" value="{{ todo['desc'] }}">
+                            <button type="submit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M23.761 2.38403C23.914 2.53916 24 2.74926 24 2.96829C24 3.18733 23.914 3.39743 23.761 3.55255L22.052 5.28051L18.7751 1.97025L20.484 0.2423C20.6377 0.0871553 20.846 0 21.0632 0C21.2805 0 21.4888 0.0871553 21.6424 0.2423L23.761 2.38238V2.38403ZM20.8937 6.44903L17.6167 3.13877L6.4539 14.4168C6.36372 14.5079 6.29583 14.619 6.25564 14.7412L4.93668 18.7367C4.91276 18.8095 4.90937 18.8877 4.92687 18.9623C4.94438 19.037 4.9821 19.1053 5.03582 19.1596C5.08954 19.2138 5.15714 19.2519 5.23107 19.2696C5.30499 19.2873 5.38233 19.2839 5.45444 19.2597L9.40968 17.9273C9.53054 17.8872 9.64049 17.8192 9.73082 17.7287L20.8937 6.45068V6.44903Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 21.5173C0 22.1758 0.258935 22.8072 0.719841 23.2728C1.18075 23.7384 1.80587 24 2.45769 24H20.4808C21.1326 24 21.7577 23.7384 22.2186 23.2728C22.6795 22.8072 22.9385 22.1758 22.9385 21.5173V11.5865C22.9385 11.3671 22.8521 11.1566 22.6985 11.0014C22.5449 10.8462 22.3365 10.759 22.1192 10.759C21.9019 10.759 21.6936 10.8462 21.5399 11.0014C21.3863 11.1566 21.3 11.3671 21.3 11.5865V21.5173C21.3 21.7368 21.2137 21.9473 21.06 22.1025C20.9064 22.2577 20.698 22.3449 20.4808 22.3449H2.45769C2.24042 22.3449 2.03204 22.2577 1.87841 22.1025C1.72477 21.9473 1.63846 21.7368 1.63846 21.5173V3.31091C1.63846 3.09142 1.72477 2.88093 1.87841 2.72573C2.03204 2.57053 2.24042 2.48334 2.45769 2.48334H13.1077C13.325 2.48334 13.5333 2.39615 13.687 2.24096C13.8406 2.08576 13.9269 1.87526 13.9269 1.65578C13.9269 1.4363 13.8406 1.2258 13.687 1.0706C13.5333 0.915406 13.325 0.828217 13.1077 0.828217H2.45769C1.80587 0.828217 1.18075 1.08979 0.719841 1.55538C0.258935 2.02098 0 2.65246 0 3.31091V21.5173Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </form>
+                        <form action="" class="todo__group__item__action__delete">
+                            <input type="hidden" name="todo-item" value="{{ todo['desc'] }}">
+                            <button type="submit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 7H5V20C5 20.5304 5.21071 21.0391 5.58579 21.4142C5.96086 21.7893 6.46957 22 7 22H17C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20V7H6ZM16.618 4L15 2H9L7.382 4H3V6H21V4H16.618Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                {% endfor %}
             </div>
-            <div class="todo__group__item">
-                <p class="todo__group__item__desc">Finish math homework</p>
+            <div class="todo__clear">
+                <button>Clear<span>5</span></button>
             </div>
-            <div class="todo__group__item">
-                <p class="todo__group__item__desc">Buy milk</p>
+        {% else %}
+            <div class="todo__group__no-items">
+                <h1>No Todos To Display...</h1>
             </div>
-            <div class="todo__group__item">
-                <p class="todo__group__item__desc">Run 2 miles</p>
-            </div>
-            <div class="todo__group__item">
-                <p class="todo__group__item__desc">Schedule doctor's appointment</p>
-            </div>
-        </div>
-        <div class="todo__clear">
-            <button>Clear<span>5</span></button>
-        </div>
+        {% endif %}
     </div>
     {% block custom_script %}
         <script>
