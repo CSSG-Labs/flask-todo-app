@@ -24,3 +24,11 @@ class TodoDAO:
     def editOne(self, todo_id, desc):
         self.db.execute('UPDATE todo SET desc=? WHERE todo_id=?', (desc, todo_id,))
         self.db.commit()
+
+    def deleteOne(self, todo_id):
+        self.db.execute('DELETE FROM todo WHERE todo_id=?', (todo_id, ))
+        self.db.commit()
+
+    def deleteAll(self):
+        self.db.execute('DELETE FROM todo')
+        self.db.commit()

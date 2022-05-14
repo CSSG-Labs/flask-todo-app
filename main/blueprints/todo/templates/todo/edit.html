@@ -21,10 +21,10 @@
                 {% endif %}
             </div>
         {% endwith %}
-        <form class="todo__add__form" action="/todos/add" method="post">
+        <form class="todo__add__form" action="/todos/{{ todo_id }}/edit/" method="post">
             <input 
-                type="text" id="new_task" placeholder="Enter task here..."
-                name="new_task" value="{{ request.form['new_task'] }}"
+                type="text" id="new_desc" placeholder="Enter task here..."
+                name="new_desc" value="{{ request.form['new_desc'] }}" 
             >
             <button type="submit">ADD</button>
         </form>

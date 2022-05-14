@@ -28,8 +28,8 @@ def add_todos():
 
     return redirect(url_for('todo.display_todos'))
 
-@todo_router.route('/<int:todo_id>/edit/', methods=('GET', 'POST'))
-def edit_todos(todo_id):
+@todo_router.route('/<int:todo_id>/edit/', methods=['GET', 'POST'])
+def edit_todo(todo_id):
     db = current_app.config['DB_CONNECTION']
     todoDAO = dao.TodoDAO(db())
 
@@ -42,8 +42,30 @@ def edit_todos(todo_id):
         if not new_desc:
             print("no task entered")
             flash('Please enter a task')
-            return redirect(url_for('todo.edit_todos', variable=todo_id))
+            return render_template("todo/edit.html", todo_id=todo_id)
 
         todoDAO.editOne(todo_id, new_desc)
+        return redirect(url_for('todo.display_todos'))
+
+    return render_template("todo/edit.html", todo_id=todo_id)
+
+
+@todo_router.route("/<int:todo_id>/delete/", methods=['GET', 'POST'])
+def del_todos(todo_id):
+    db = current_app.config['DB_CONNECTION']
+    todoDAO = dao.TodoDAO(db())
+
+    if request.method == 'POST':
+        todoDAO.deleteOne(todo_id)
+
+    return redirect(url_for('todo.display_todos'))
+
+@todo_router.route("/clear", methods=['GET', 'POST'])
+def del_all_todos():
+    db = current_app.config['DB_CONNECTION']
+    todoDAO = dao.TodoDAO(db())
+
+    if request.method == 'POST':
+        todoDAO.deleteAll()
 
     return redirect(url_for('todo.display_todos'))
