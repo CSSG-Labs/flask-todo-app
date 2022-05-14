@@ -22,6 +22,15 @@
     width: 100%;
 }
 
+/* https://www.w3schools.com/howto/howto_js_alert.asp */
+.todo__add__error__msg {
+    font-size: 1.2em;
+    padding: 2em;
+    background-color: var(--todo-red);
+    color: white;
+    margin-bottom: 2em;
+}
+
 .todo__add__form{
     /* Allow input field and button sit side by side */
     display: flex;

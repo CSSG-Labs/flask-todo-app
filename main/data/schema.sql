@@ -17,9 +17,18 @@
 --         ON DELETE CASCADE
 -- );
 
-DROP TABLE IF EXISTS task;
+DROP TABLE IF EXISTS todo;
 
 CREATE TABLE todo(
     todo_id INTEGER PRIMARY KEY,
     desc TEXT NOT NULL
-)
+);
+
+INSERT INTO todo (desc)
+VALUES ('Take out the trash');
+
+INSERT INTO todo (desc)
+VALUES ('Wash dishes');
+
+INSERT INTO todo (desc)
+VALUES ('Finish homework');

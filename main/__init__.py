@@ -19,9 +19,8 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         # app.instance.path - path to instance folder
         DATABASE=os.path.join(app.instance_path, 'main.sqlite'),
+        DB_CONNECTION = db.get_db
     )
-
-    app.config['db'] = db.get_db()
 
     db.init_app(app)
 

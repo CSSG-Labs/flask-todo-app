@@ -8,9 +8,19 @@ class TodoDAO:
         self.db = db
 
     def getAll(self):
-        todos = self.db.execute('SELECT * FROM todo').fetchAll()
+        todos = self.db.execute('SELECT * FROM todo').fetchall()
+
         return todos
 
     def getOne(self, todo_id):
         todo = self.db.execute('SELECT * FROM todo WHERE todo_id = ?', (todo_id,)).fetchone()
+
         return todo
+
+    def addOne(self, desc):
+        self.db.execute('INSERT INTO todo (desc) VALUES (?)', (desc,))
+        self.db.commit()
+
+    def editOne(self, todo_id, desc):
+        self.db.execute('UPDATE todo SET desc=? WHERE todo_id=?', (desc, todo_id,))
+        self.db.commit()
