@@ -25,11 +25,48 @@
 
 ## Coding Style
 
-_todo..._
+_The coding style was inspired by [The Hitchhikers Guide to Python](https://docs.python-guide.org/writing/style/)_
+
+- General Concepts
+    -Explicit Code
+        - The most straighforward way of coding is prefered. 
+        -Bad
+         def make_complex(*args):
+         x, y = args
+         return dict(**locals())
+
+        -Good
+
+        def make_complex(x, y):
+        return {'x': x, 'y': y}
+
+    - One Statement per line
+        - While there are some areas where compound statements are allowed in  general it is good practice to have one statement per line
+
+        -Bad
+
+            print('one'); print('two')
+            if x == 1: print('one')
+            if <complex comparison> and <other complex comparison>:# do something
+
+        -Good
+
+            print('one')
+            print('two')
+
+            if x == 1:
+            print('one')
+
+            cond1 = <complex comparison>
+            cond2 = <other complex comparison>
+            if cond1 and cond2:
+            # do something
+    - in general do your best to try and keep you code concise and clean so it is readable to everyone. For more detailed examples or if you are unsure about something please refer to the documentation linked above or reach out to one of us.
+
 
 ## Development Environment Setup
 
-_Instructions are written with Windows vscode users in mind..._
+_Instuctions for Windows in VS Code
 
 - Create virtual environment
   - `python -m venv .venv`
@@ -44,6 +81,29 @@ _Instructions are written with Windows vscode users in mind..._
 - Setup pre-commit hook
   - `pre-commit install`
 
+
+Linux/ MacOS
+These instructions were made with VS Code in mind 
+
+    -check to see if python is installed
+        - open a new terminal if one is not already present
+        - enter in terminal ' python3 --version'
+        - if that dosn't work try 'python --version'
+        - if you have python 2, or are missing python you will need to download and follow instructions from [Python.org](https://www.python.org/downloads/)
+
+    -create a virtual enviroment
+      - `mkdir myproject `(name it based on what project you are keeping in the folder)
+      - `cd myproject` (or folder name)
+      - ` python3 -m venv venv`
+      - activate the enviroment with `.venv/bin/activate`
+    
+    -install Flask
+        - once your enviroment is active type in `pip install Flask'
+
+### Using Git to make a pull request
+_Instructions on [Sachinsf.com](https://www.sachinsf.com/how-to-push-the-code-from-vs-code-to-github/)
+  - Make sure you have git installed on your PC, and that all the files you are pushing are in one folder before you push any changes
+
 ### Running app
 
 - Set `FLASK_APP` env variable
@@ -53,7 +113,14 @@ _Instructions are written with Windows vscode users in mind..._
 - Initialize database
   - `flask init-db`
 - Run app
-  - `flask run`
+  - `flask run` or `python -m flask`
+  
+### Troubleshooting
+- What to do if your server does not start
+    - check to make sure your version of Flask is not outdated
+    - check the Import name
+        -The FLASK_APP environment variable is the name of the module to import at flask run. In case that module is incorrectly named you will get an import error upon start (or if debug is enabled when you navigate to the application). It will tell you what it tried to import and why it failed.The most common reason is a typo or because you did not actually create an app object.
+    - if these don't resolve your issue please let one of the admins on the project know  and also refer to the [Flask_Documentation](https://flask.palletsprojects.com/en/2.1.x/quickstart/)
 
 ## Testing
 
@@ -81,4 +148,4 @@ _todo..._
 
 ## Join us
 
-We are discussing this project on [discord](#) _todo: ask server owner whether discord invite should be posted here_
+We are discussing this project on [discord]. Please contact andromedamoon-stack by DM on Github or riboney @ ironbe#4809 for details on our server.

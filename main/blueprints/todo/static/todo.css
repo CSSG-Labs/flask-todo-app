@@ -22,6 +22,15 @@
     width: 100%;
 }
 
+/* https://www.w3schools.com/howto/howto_js_alert.asp */
+.todo__add__error__msg {
+    font-size: 1.2em;
+    padding: 2em;
+    background-color: var(--todo-red);
+    color: white;
+    margin-bottom: 2em;
+}
+
 .todo__add__form{
     /* Allow input field and button sit side by side */
     display: flex;
@@ -73,6 +82,11 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+
+.todo__group__no-items {
+    font-family: 'Roboto Condensed';
+    font-style: italic;
 }
 
 .todo__group__item {

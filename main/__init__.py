@@ -6,18 +6,20 @@ from flask import Flask, render_template
 from .data import db
 
 from . import views
-from .modules.todo.views import todo_router
+from .blueprints.todo.views import todo_router
 
 # --> see 2*
 def create_app(test_config=None):
     # __name__ & instance_relative_config --> see 3*
     app = Flask(__name__, instance_relative_config=True)
+
     # sets default configuration for flask app (development?)
     app.config.from_mapping(
         # TODO: load from enviroment variable
         SECRET_KEY='dev',
         # app.instance.path - path to instance folder
         DATABASE=os.path.join(app.instance_path, 'main.sqlite'),
+        DB_CONNECTION = db.get_db
     )
 
     db.init_app(app)

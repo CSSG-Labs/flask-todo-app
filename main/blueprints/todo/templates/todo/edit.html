@@ -1,0 +1,32 @@
+{% extends "layout.html" %} 
+
+{% block custom_css %}
+    <!-- Finding path to static folder: https://www.siparker.net/python/how-to-use-blueprint-static-folders-correctly-in-python-flask/ -->
+    <link href="{{ url_for('.static', filename='todo.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Todo App
+{% endblock %} 
+
+{% block body %}
+    <div class="todo__add">
+        <!-- https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/ -->
+        {% with messages = get_flashed_messages() %}
+            <div class="todo__add__error">
+                {% if messages %}
+                    {% for message in messages%}
+                        <p class="todo__add__error__msg">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endwith %}
+        <form class="todo__add__form" action="/todos/{{ todo_id }}/edit/" method="post">
+            <input 
+                type="text" id="new_desc" placeholder="Enter task here..."
+                name="new_desc" value="{{ request.form['new_desc'] }}" 
+            >
+            <button type="submit">ADD</button>
+        </form>
+    </div>
+{% endblock %}
