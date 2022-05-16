@@ -76,7 +76,6 @@ p, h1, h2, h3, h4, h5, h6 {
   /* Add a black background color to the top navigation */
   .topnav {
       background-color: #ffffff;
-      overflow: hidden;
       border-bottom: 1px solid black;
   }
 
