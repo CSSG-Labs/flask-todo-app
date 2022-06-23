@@ -42,8 +42,3 @@ The purpose of this project is to
 ## Roadmap (V1)
 
 ![image](https://user-images.githubusercontent.com/14286113/168209733-13b07706-3ba2-43af-8935-72cad91b054a.png)
-
-
-## Join the discussions!
-
-- Contact ironbe#4809 on discord (add me as friend if we don't share a server)
