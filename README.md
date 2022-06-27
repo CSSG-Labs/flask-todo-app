@@ -8,6 +8,7 @@
 * [About](#about)
   * [Built with](#built-with)
   * [Features](#features)
+* [Usage](#usage)
 * [Getting Started](#getting-started)
 * [Roadmap](#roadmap)
 
@@ -28,6 +29,10 @@ The purpose of this project is to
 - Flask
 - Jinja2
 - HTML/CSS/JS
+
+## Usage
+
+https://user-images.githubusercontent.com/14286113/175845862-3bfa336b-6d6d-4f83-a402-52255c12781e.mp4
 
 ## Getting Started
 
