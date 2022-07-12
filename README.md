@@ -4,6 +4,8 @@
     <a href="#" class="default">Contribute</a> 
 </h3>
 
+_Note: Work currently in progress...application not yet deployed_
+
 ## Table of Contents
 * [About](#about)
   * [Built with](#built-with)
